@@ -1,0 +1,8 @@
+cwin , 18.18
+cwin , 17.92
+cwin , 19.14
+cwin , 19.32
+cwin , 18.5
+cwin , 17.84
+cwin , 19.24
+cwin , 19.16
