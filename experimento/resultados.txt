@@ -1,0 +1,199 @@
+[1] "ANÁLISE PRELIMINAR DAS AMOSTRAS INICIAIS"
+[1] "-----------------------------------------------"
+[1] "Sumarizacao das amostras iniciais como um todo:"
+   base        tempo      
+ cubu:30   Min.   :1.840  
+ cwin:30   1st Qu.:2.635  
+ iubu:30   Median :3.070  
+ iwin:30   Mean   :2.986  
+           3rd Qu.:3.360  
+           Max.   :3.580  
+[1] "Standard Deviation"
+[1] 0.4103032
+[1] "-----------------------------------------------"
+[1] "Sumarizacao das amostras individualizadas:"
+[1] "Windows compilado----------------"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  3.120   3.305   3.390   3.375   3.460   3.580 
+[1] "Standard Deviation"
+[1] 0.1213355
+[1] "-----------------------------------------------"
+[1] "Windows interpretado----------------"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3.06    3.22    3.32    3.31    3.38    3.56 
+[1] "Standard Deviation"
+[1] 0.1234839
+[1] "-----------------------------------------------"
+[1] "Ubuntu compilado----------------"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.840   2.405   2.520   2.562   2.735   3.060 
+[1] "Standard Deviation"
+[1] 0.2680927
+[1] "-----------------------------------------------"
+[1] "Ubuntu interpretado----------------"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  2.120   2.585   2.700   2.696   2.850   3.200 
+[1] "Standard Deviation"
+[1] 0.225566
+[1] "-----------------------------------------------"
+[1] "-----------------------------------------------"
+[1] "TESTE DE NORMALIDADE PARA CADA UMA DAS AMOSTRAS"
+[1] "-----------------------------------------------"
+[1] "Windows compilado----------------"
+
+	Shapiro-Wilk normality test
+
+data:  cwin$tempo
+W = 0.96264, p-value = 0.3611
+
+[1] "-----------------------------------------------"
+[1] "Windows interpretado----------------"
+
+	Shapiro-Wilk normality test
+
+data:  iwin$tempo
+W = 0.96611, p-value = 0.4389
+
+[1] "-----------------------------------------------"
+[1] "Ubuntu compilado----------------"
+
+	Shapiro-Wilk normality test
+
+data:  cubu$tempo
+W = 0.95987, p-value = 0.3074
+
+[1] "-----------------------------------------------"
+[1] "Ubuntu interpretado----------------"
+
+	Shapiro-Wilk normality test
+
+data:  iubu$tempo
+W = 0.98754, p-value = 0.9723
+
+[1] "-----------------------------------------------"
+[1] "-----------------------------------------------"
+[1] "RESULTADO DO CALCULO DE TAMANHO AMOSTRAL VIA TESTE DE POTENCIA ANOVA"
+
+     Balanced one-way analysis of variance power calculation 
+
+         groups = 4
+              n = 119.4611
+    between.var = 0.001666667
+     within.var = 0.03818106
+      sig.level = 0.01
+          power = 0.8
+
+NOTE: n is number in each group
+
+[1] "-----------------------------------------------"
+[1] "ANÁLISE PRELIMINAR DAS AMOSTRAS FINAIS"
+[1] "-----------------------------------------------"
+[1] "Analise das amostras finais como um todo"
+   base         tempo      
+ cubu:120   Min.   :1.760  
+ cwin:120   1st Qu.:2.700  
+ iubu:120   Median :3.080  
+ iwin:120   Mean   :2.961  
+            3rd Qu.:3.200  
+            Max.   :3.600  
+[1] "Standard Deviation"
+[1] 0.3324728
+[1] "-----------------------------------------------"
+[1] "Sumarizacao das amostras individualizadas:"
+[1] "Windows compilado----------------"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3.02    3.12    3.16    3.16    3.20    3.30 
+[1] "Standard Deviation"
+[1] 0.05413853
+[1] "-----------------------------------------------"
+[1] "Windows interpretado----------------"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  3.060   3.180   3.320   3.301   3.405   3.600 
+[1] "Standard Deviation"
+[1] 0.122323
+[1] "-----------------------------------------------"
+[1] "Ubuntu compilado----------------"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.780   2.480   2.620   2.593   2.740   3.040 
+[1] "Standard Deviation"
+[1] 0.2138058
+[1] "-----------------------------------------------"
+[1] "Ubuntu interpretado----------------"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.760   2.620   2.800   2.788   2.960   3.340 
+[1] "Standard Deviation"
+[1] 0.240119
+[1] "-----------------------------------------------"
+[1] "-----------------------------------------------"
+[1] "AVERIGUACAO DE PREMISSAS PARA APLICACAO DE ANOVA PARAMETRICA"
+[1] "-----------------------------------------------"
+             Df Sum Sq Mean Sq F value Pr(>F)    
+base          3  38.52   12.84   423.5 <2e-16 ***
+Residuals   476  14.43    0.03                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "-----------------------------------------------"
+[1] "Premissa de normalidade:"
+
+	Shapiro-Wilk normality test
+
+data:  modelo$residuals
+W = 0.95166, p-value = 2.01e-11
+
+[1] "-----------------------------------------------"
+[1] "Premissa de homocedasticidade:"
+
+	Fligner-Killeen test of homogeneity of variances
+
+data:  tempo by base
+Fligner-Killeen:med chi-squared = 123.09, df = 3, p-value < 2.2e-16
+
+[1] "-----------------------------------------------"
+[1] "-----------------------------------------------"
+[1] "APLICACAO DE KRUSKAL-WALLIS NAO PARAMETRICO"
+
+	Pairwise comparisons using Wilcoxon rank sum test 
+
+data:  valores and grupos 
+
+     cwin    iwin    cubu   
+iwin < 2e-16 -       -      
+cubu < 2e-16 < 2e-16 -      
+iubu < 2e-16 < 2e-16 1.6e-09
+
+P value adjustment method: bonferroni 
+[1] "-----------------------------------------------"
+[1] "-----------------------------------------------"
+[1] "AVERIGUACAO DAS MAGNITUDES DAS DIFERENCAS ENTRE AMOSTRAS"
+            Difference pvalue sig.        LCL        UCL
+cubu - cwin -223.25417      0  *** -250.30140 -196.20693
+cubu - iubu  -64.49583      0  ***  -91.54307  -37.44860
+cubu - iwin -305.38333      0  *** -332.43057 -278.33610
+cwin - iubu  158.75833      0  ***  131.71110  185.80557
+cwin - iwin  -82.12917      0  *** -109.17640  -55.08193
+iubu - iwin -240.88750      0  *** -267.93473 -213.84027
+[1] "-----------------------------------------------"
+[1] "-----------------------------------------------"
+[1] "APLICACAO DE TUKEY TODOS CONTRA TODOS"
+
+	 Simultaneous Confidence Intervals
+
+Multiple Comparisons of Means: Tukey Contrasts
+
+
+Fit: aov(formula = tempo ~ base, data = amostra)
+
+Quantile = 3.1226
+99% family-wise confidence level
+ 
+
+Linear Hypotheses:
+                 Estimate lwr      upr     
+cwin - cubu == 0  0.56750  0.49731  0.63769
+iubu - cubu == 0  0.19533  0.12514  0.26552
+iwin - cubu == 0  0.70850  0.63831  0.77869
+iubu - cwin == 0 -0.37217 -0.44236 -0.30198
+iwin - cwin == 0  0.14100  0.07081  0.21119
+iwin - iubu == 0  0.51317  0.44298  0.58336
+
+[1] "-----------------------------------------------"
