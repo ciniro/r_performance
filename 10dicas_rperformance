@@ -1,0 +1,24 @@
+10 dicas para melhorar o desempenho do R
+Ciniro Nametala - Escrito na noite de 26 de Junho de 2016 em Belo Horizonte, Minas Gerais.
+
+Pra quem gosta e usa: R é lento mesmo. Quem trabalha com ele sabe. Depois de alguns meses testando inúmeras coisas para melhorar o desempenho seguem algumas dicas que você não vai encontrar em fóruns na internet.
+
+1 - Use linux, de preferência uma distro leve. Recomendo a versão mais recente do Lubuntu (16.4).
+
+2 - Não use o core do R padrão do CRAN. Cálculos primitivos não usam todos os cores do seu processador. Use o Microsoft R Open (MRO) na versão mais recente (3.2.5) (antigo Revolution R).
+
+3 - Depois disso atualize o apt-get e instale o build-essencials e depois o liblapack-dev. Ele vai habilitar compilações que no Lubuntu não vem incluídas na distro.
+
+4 - Instale o MKL 3.2.5 para turbinar o MRO.
+
+5 - Instale a versão mais recente do RStudio e configure o mesmo para usar o MRO. (ele pode conviver com outras versões do R, use alternatives para configurar).
+
+6 - Use muito a biblioteca compiler. Mas não compile usando o enableJIT(3). Compile função por função usando cpmfun().
+
+7 - Quando possível paralelize o código com a biblioteca parallel.
+
+8 - Programe direito: Declare tamanho de estruturas de dados antes de ir para um laço, prefira mclapply(), remova variáveis que não vai mais utilizar com rm() e etc.
+
+9 - Escolha bibliotecas. Existem muitas que fazem a mesma coisa mas o desempenho pode ser radicalmente diferente. Por exemplo, fazer previsão com forecast() ao invés de com predict() pode ser até 50% mais rápido.
+
+10 - Com essas dicas espere pelo menos uns 70% de melhoria de desempenho (confira com system.time()), mas ainda assim, não espere que o R seja tão veloz quanto um C++. E se no seu caso precisar ser... então você está usando a linguagem errada.
